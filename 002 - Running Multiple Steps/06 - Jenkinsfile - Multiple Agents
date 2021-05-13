@@ -6,14 +6,18 @@ pipeline {
 				image 'maven:latest' 
 				}
 			}
+		steps{
 			sh 'mvn --version'
+			}
 		}
 	stage('node'){
 		agent {docker { 
 				image 'node:latest' 
 				}
 			}
+		steps{
 			sh 'npm --version'
+			}
 		}
     		}
 		}
