@@ -13,12 +13,11 @@ pipeline {
       stage('Test') {
       		steps {
 			sh "grep 2021 1.txt"
-		}
-      }
+		      }
+      		    }
       
-    }
+          }
 }
-
 def printDate2File(filename = '') {
   sh " data > $filename"
   sh "cat $filename"
