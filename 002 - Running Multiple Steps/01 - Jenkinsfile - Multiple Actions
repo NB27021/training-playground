@@ -9,7 +9,7 @@ pipeline {
 	  steps {
 	  	  createAndPrint('data')
 		  sh "sleep 10" 
-		  createAndPrint('data')
+		  createAndPrint('data1')
 		}
 	}
     }
