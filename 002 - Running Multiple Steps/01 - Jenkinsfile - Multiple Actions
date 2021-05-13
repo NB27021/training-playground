@@ -15,6 +15,6 @@ pipeline {
     }
 }
 
-def creatAndPrint(fileName = '' ) {
+def createAndPrint(fileName = '' ) {
  sh "date > $fileName && cat $fileName"
 }
