@@ -1,6 +1,13 @@
 pipeline {
-    agent { 
-	}
+    agent none
     stages {
+    	stage ('maven') {  { dockerfile { filename '04 - Dockerfile mvn - Multiple Agents using Dockerfile'
+    				          dir '003 - Defining Execution Environments'
+				}
+				}
+	stage ('node') { { dockerfile { filename '04 - Dockerfile node - Multiple Agents using Dockerfile'
+    				          dir '003 - Defining Execution Environments'
+				}
+				}
     }
 }
