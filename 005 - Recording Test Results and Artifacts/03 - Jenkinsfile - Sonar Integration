@@ -1,7 +1,10 @@
 pipeline {
     agent { 
 		docker { 
-			image 'alpine:latest' 
+			image 'maven:3.3.3' 
+			args '--network training-playground'
+
+
 		}
 	}
     stages {
