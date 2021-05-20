@@ -5,9 +5,15 @@ pipeline {
 		}
 	}
     stages {
-        stage('tests') {
+        stage('Analyze') {
             steps {
-                sh ""
+                sh "mvn install				\
+			-s settings-copy.xml		\
+			-f '005 - Recording Test Results and Artifacts/03 - Sonar Integration'		\
+			org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar \
+			Dsonar.host.url='http://sonarqube:9000'		\
+			-Dsonar.projectKey='myApp'			\
+			-Dsonar.projectName='myProject'"
             }
         }
     }
