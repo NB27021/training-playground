@@ -12,6 +12,7 @@ pipeline {
             steps {
 	    configFileProvider([configFile(fileId: "settings.xml", targetLocation: 'settings-copy.xml')]) {
 			sh "mvn install -s settings-copy.xml -f '005 - Recording Test Results and Artifacts/02 - 03 - Sonar Integration'"
+			}
                 sh "mvn install				\
 			-s settings-copy.xml		\
 			-f '005 - Recording Test Results and Artifacts/03 - Sonar Integration'		\
