@@ -7,8 +7,16 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh ""
+		sh "ls -lta"
+                sh "date > data.txt"
+		sh "ls -lta"
             }
         }
     }
+   post {
+   always {
+   	cleanWS()
+	sh "ls -lta"
+	}
+   }
 }
