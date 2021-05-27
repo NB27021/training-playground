@@ -9,7 +9,7 @@ pipeline {
         stage('build') {
             steps {
 	    	sh "date > data.txt
-                sh "git reset --hard"
+                sh "git clean -fd"
 		sh "ls -l"
             }
         }
